@@ -9,7 +9,7 @@ import { OrderTracker, EmailNotifier, DashboardNotifier } from './patterns/behav
 console.log("--- E-Commerce Design Patterns Simulation ---");
 console.log("===========================================\n");
 
-// --- Part 2A: Singleton Pattern ---
+// // --- Part 2A: Singleton Pattern ---
 // console.log("--- 2A: Singleton Pattern ---");
 // const cart1 = new CartService();
 // const cart2 = new CartService();
@@ -20,9 +20,9 @@ console.log("===========================================\n");
 // console.log("\n");
 
 
-// --- Part 2B: Factory Pattern ---
+// // --- Part 2B: Factory Pattern ---
 // console.log("--- 2B: Factory Pattern ---");
-// const factory = new ProductFactory();
+const factory = new ProductFactory();
 // const book = factory.createProduct('book', { title: 'The Pragmatic Programmer', price: 35 });
 // const laptop = factory.createProduct('electronic', { model: 'XPS 15', price: 1500 });
 // book.describe();
@@ -30,7 +30,7 @@ console.log("===========================================\n");
 // console.log("\n");
 
 
-// --- Part 3A: Decorator Pattern ---
+// // --- Part 3A: Decorator Pattern ---
 // console.log("--- 3A: Decorator Pattern ---");
 // let myBook = factory.createProduct('book', { title: 'Design Patterns', price: 45 });
 // // Wrap the book with a gift wrap decorator
@@ -42,7 +42,7 @@ console.log("===========================================\n");
 // console.log("\n");
 
 
-// --- Part 3B: Facade Pattern ---
+// // --- Part 3B: Facade Pattern ---
 // console.log("--- 3B: Facade Pattern ---");
 // const checkout = new CheckoutFacade();
 // const orderDetails = { userId: 'user-123', productIds: [1, 3], shippingInfo: '123 Main St' };
@@ -50,7 +50,7 @@ console.log("===========================================\n");
 // console.log("\n");
 
 
-// --- Part 4A: Strategy Pattern ---
+// // --- Part 4A: Strategy Pattern ---
 // console.log("--- 4A: Strategy Pattern ---");
 // const packageDetails = { weight: 2.5, dimensions: { width: 10, height: 8, depth: 3 } };
 // const calculator = new ShippingCalculator();
@@ -65,7 +65,7 @@ console.log("===========================================\n");
 // console.log("\n");
 
 
-// --- Part 4B: Command Pattern ---
+// // --- Part 4B: Command Pattern ---
 // console.log("--- 4B: Command Pattern ---");
 // const invoker = new CommandInvoker();
 // const cart = new CartService();
@@ -80,14 +80,14 @@ console.log("===========================================\n");
 
 
 // --- Part 4C: Observer Pattern ---
-// console.log("--- 4C: Observer Pattern ---");
-// const orderTracker = new OrderTracker('order-456');
-// const emailNotifier = new EmailNotifier();
-// const dashboardNotifier = new DashboardNotifier();
-// orderTracker.addObserver(emailNotifier);
-// orderTracker.addObserver(dashboardNotifier);
-// orderTracker.updateStatus('Processing');
-// console.log("---");
-// orderTracker.removeObserver(emailNotifier);
-// orderTracker.updateStatus('Shipped');
-// console.log("\n");
+console.log("--- 4C: Observer Pattern ---");
+const orderTracker = new OrderTracker('order-456');
+const emailNotifier = new EmailNotifier();
+const dashboardNotifier = new DashboardNotifier();
+orderTracker.addObserver(emailNotifier);
+orderTracker.addObserver(dashboardNotifier);
+orderTracker.updateStatus('Processing');
+console.log("---");
+orderTracker.removeObserver(emailNotifier);
+orderTracker.updateStatus('Shipped');
+console.log("\n");
